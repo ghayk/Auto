@@ -3,48 +3,48 @@ const ACTIONS_DIR = 'classes/actions'
 
 class Car {
     init() {
-        this.setListeners();
-        new Modal().setOptionsInModal()
+        window.onload = () => {
+            this.getCars('')
+            this.setListeners();
+            new Modal().setOptionsInModal()
+        }
     }
 
     setListeners() {
-        window.onload = () => {
+
+        wrapper.querySelector('.dataType').addEventListener('change', () => {
             this.getCars('')
+        })
 
-            wrapper.querySelector('.dataType').addEventListener('change', () => {
-                this.getCars('')
-            })
+        wrapper.querySelector('.add-btn').addEventListener('click', () => {
+            this.addCar()
+        })
 
-            wrapper.querySelector('.add-btn').addEventListener('click', () => {
-                this.addCar()
-            })
+        wrapper.querySelector('.save-btn').addEventListener('click', () => {
+            if (wrapper.querySelector('.save-btn').value === 'add') {
+                this.saveCar()
+            }
+            if (wrapper.querySelector('.save-btn').value === 'update') {
+                this.updateCar()
+            }
+        })
 
-            wrapper.querySelector('.save-btn').addEventListener('click', () => {
-                if (wrapper.querySelector('.save-btn').value === 'add') {
-                    this.saveCar()
-                }
-                if (wrapper.querySelector('.save-btn').value === 'update') {
-                    this.updateCar()
-                }
-            })
+        wrapper.querySelector('.search-car').addEventListener('keyup', () => {
+            this.getCars(wrapper.querySelector('.search-car').value.trim())
+        })
 
-            wrapper.querySelector('.search-car').addEventListener('keyup', () => {
-                this.getCars(wrapper.querySelector('.search-car').value.trim())
-            })
+        wrapper.querySelector('.form-container').addEventListener('click', () => {
+            new Modal().closeModal()
+        })
 
-            wrapper.querySelector('.form-container').addEventListener('click', () => {
-                new Modal().closeModal()
-            })
+        wrapper.querySelector('.cancel-btn').addEventListener('click', () => {
+            new Modal().closeModal()
+        })
 
-            wrapper.querySelector('.cancel-btn').addEventListener('click', () => {
-                new Modal().closeModal()
-            })
-
-            wrapper.querySelector('.form-car').addEventListener('click', e => {
-                e.stopPropagation();
-                e.preventDefault()
-            })
-        };
+        wrapper.querySelector('.form-car').addEventListener('click', e => {
+            e.stopPropagation();
+            e.preventDefault()
+        })
     }
 
     getCars(searchText) {
