@@ -1,0 +1,13 @@
+{
+  "require": {
+    "monolog/monolog": "^2.8",
+    "smarty/smarty": "^4.2",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "classes/dal/",
+      "App\\Manager\\": "classes/managers/"
+    }
+  }
+}
