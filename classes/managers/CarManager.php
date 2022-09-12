@@ -38,9 +38,9 @@ class CarManager
     /**
      * @return array
      */
-    public function getCarsFromFile(): array
+    public function getCarsFromFile($searchText): array
     {
-        return CarFileMapper::getInstance()->getCars();
+        return CarFileMapper::getInstance()->getCars($searchText);
     }
 
     /**

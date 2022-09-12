@@ -2,7 +2,6 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-
 use App\Manager\CarManager;
 use App\Model\CarModel;
 
@@ -19,6 +18,6 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor']) {
         $id = CarManager::getInstance()->addCarFromFile($car);
     }
 
-    echo json_encode($id,true);
+    echo json_encode($id);
 
 }

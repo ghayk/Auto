@@ -19,5 +19,5 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor'] && $_GET
         CarManager::getInstance()->updateCarFromFile($car);
     }
 
-    echo json_encode($_GET['id'], true);
+    echo json_encode($_GET['id']);
 }

@@ -4,7 +4,7 @@ namespace App\Mapper;
 
 use PDO;
 
-define("App\Mapper\DB", json_decode(file_get_contents(__DIR__.'/../../../config/db.json'),true));
+define("App\Mapper\DB", json_decode(file_get_contents(__DIR__ . '/../../../config/db.json'), true));
 
 
 abstract class MySqlMapper

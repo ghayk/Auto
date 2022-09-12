@@ -11,5 +11,5 @@ if ($_GET['delete']) {
         CarManager::getInstance()->deleteCarFomFile($_GET['delete']);
     }
 
-    echo json_encode($_GET['delete'], true);
+    echo json_encode($_GET['delete']);
 }

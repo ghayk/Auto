@@ -13,7 +13,7 @@ if ($_GET['dataType'] === 'mysql') {
 } elseif ($_GET['dataType'] === 'color') {
     $list = ColorManager::getInstance()->getColorsFromMySql($_GET['search']);
 } else {
-    $list = CarManager::getInstance()->getCarsFromFile();
+    $list = CarManager::getInstance()->getCarsFromFile($_GET['search']);
 }
 
 echo json_encode($list);

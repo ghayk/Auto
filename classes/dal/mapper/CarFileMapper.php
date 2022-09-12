@@ -41,7 +41,7 @@ class CarFileMapper
             'motor' => $motor
         ];
 
-        $cars = $this->getCars();
+        $cars = $this->getCars('');
 
         $cars[] = $carArr;
 
@@ -52,7 +52,7 @@ class CarFileMapper
 
     public function deleteCar($id): void
     {
-        $cars = $this->getCars();
+        $cars = $this->getCars('');
 
         $newCars = [];
         foreach ($cars as $car) {
@@ -78,7 +78,7 @@ class CarFileMapper
      */
     public function getEditCar($id): array
     {
-        $cars = $this->getCars();
+        $cars = $this->getCars('');
 
         foreach ($cars as $car) {
             if ($car['id'] === $id) {
@@ -88,7 +88,7 @@ class CarFileMapper
         return [];
     }
 
-    public function getCars(): array
+    public function getCars($searchText): array
     {
         $cars = json_decode(file_get_contents(self::FILE_DIR), true);
 
@@ -96,7 +96,23 @@ class CarFileMapper
             $cars = [];
         }
 
-        return $cars;
+        $newCars = [];
+        $searchText = strtolower($searchText);
+
+        foreach ($cars as $car) {
+            if (preg_match("/$searchText/", strtolower($car['brand']))) {
+                $arr = [
+                    'id' => $car['id'],
+                    'brand' => $car['brand'],
+                    'year' => $car['year'],
+                    'color' => $car['color'],
+                    'motor' => $car['motor']
+                ];
+                $newCars[] = $arr;
+            }
+        }
+
+        return $newCars;
     }
 
     public function setCars($cars): void
