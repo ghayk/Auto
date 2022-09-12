@@ -15,7 +15,7 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor'] && $_GET
 
     if ($_GET['dataType'] === 'mysql') {
         CarManager::getInstance()->updateCarFromMySql($car);
-    }else{
+    } elseif ($_GET['dataType'] === 'file') {
         CarManager::getInstance()->updateCarFromFile($car);
     }
 

@@ -12,9 +12,10 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor']) {
     $car->setColor($_GET['color']);
     $car->setMotor($_GET['motor']);
 
+    $id = null;
     if ($_GET['dataType'] === 'mysql') {
         $id = CarManager::getInstance()->addCarFromMySql($car);
-    }else{
+    } elseif ($_GET['dataType'] === 'file') {
         $id = CarManager::getInstance()->addCarFromFile($car);
     }
 

@@ -12,8 +12,10 @@ if ($_GET['dataType'] === 'mysql') {
     $list = BrandManager::getInstance()->getBrandsFromMySql($_GET['search']);
 } elseif ($_GET['dataType'] === 'color') {
     $list = ColorManager::getInstance()->getColorsFromMySql($_GET['search']);
-} else {
+} elseif($_GET['dataType'] === 'file'){
     $list = CarManager::getInstance()->getCarsFromFile($_GET['search']);
+}else{
+    $list =[];
 }
 
 echo json_encode($list);
