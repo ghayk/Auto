@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-09-13 08:52:23
+/* Smarty version 4.2.0, created on 2022-09-13 13:14:27
   from 'C:\OpenServer\domains\auto\template\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_63201a97d7a458_30461603',
+  'unifunc' => 'content_63205803c0c9a2_12853217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e6035a62369f4cd72e664c42659be38dc72df7c' => 
     array (
       0 => 'C:\\OpenServer\\domains\\auto\\template\\index.tpl',
-      1 => 1663048343,
+      1 => 1663064067,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./main/cards.tpl' => 1,
   ),
 ),false)) {
-function content_63201a97d7a458_30461603 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63205803c0c9a2_12853217 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 
@@ -48,7 +48,7 @@ function content_63201a97d7a458_30461603 (Smarty_Internal_Template $_smarty_tpl)
             <label>
                 <select name="db" class="dataType">
                     <option value="mysql">MySql</option>
-                    <option selected value="file">File</option>
+                    <option value="file">File</option>
                 </select>
             </label>
         </div>

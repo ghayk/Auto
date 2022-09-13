@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #eee;
+}
+
 .header {
     width: 100%;
     background: #2fa0f1;
@@ -144,20 +148,20 @@
 
 .wrapper .main .cards-container .card {
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     min-width: 200px;
     height: 340px;
     border-radius: 10px;
-    background: #eee;
     position: relative;
     font-size: 16px;
+    background-color: #fff;
 }
 
 .wrapper .main .cards-container .card .card-img-container {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 180px;
+    height: 170px;
     margin-bottom: 10px;
 }
 
@@ -174,16 +178,24 @@
     margin-bottom: 10px;
 }
 
+.wrapper .main .cards-container .card .card-description{
+    margin-bottom: 10px;
+}
+
+.wrapper .main .cards-container .card .card-description tr td{
+    min-width: 60px;
+}
+
 .wrapper .main .cards-container .card .card-form-container {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 20px;
 }
 
 .wrapper .main .cards-container .card .card-form-container > * {
-    margin: 5px;
     letter-spacing: 1px;
+    width: 95px;
 }
 
 .wrapper .main .cards-container .card .card-form-container .edit-form {

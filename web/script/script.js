@@ -6,12 +6,14 @@ window.onload = init;
 function init() {
     getCars()
     setListeners();
-    setOptionsInModal()
+    setOptions('#select-brand', 'brand')
+    setOptions('#select-color', 'color')
 }
 
 function setListeners() {
 
     wrapper.querySelector('.dataType').addEventListener('change', () => {
+        wrapper.querySelector('.search-car').value = ''
         getCars()
     })
 
@@ -36,9 +38,7 @@ function setListeners() {
         closeModal()
     })
 
-    wrapper.querySelector('.cancel-btn').addEventListener('click', () => {
-        closeModal()
-    })
+    wrapper.querySelector('.cancel-btn').addEventListener('click', ()=>{closeModal()})
 
     wrapper.querySelector('.form-car').addEventListener('click', e => {
         e.stopPropagation();
@@ -68,9 +68,9 @@ function getCars(searchText = '') {
             const newCar = wrapper.querySelectorAll('.card')[0].cloneNode(true);
 
             newCar.querySelector('.car-brand').innerHTML = brand
-            newCar.querySelector('.car-year').innerHTML = 'year - ' + year
-            newCar.querySelector('.car-color').innerHTML = 'color - ' + color
-            newCar.querySelector('.car-motor').innerHTML = 'motor - ' + motor
+            newCar.querySelector('.car-year').innerHTML = year
+            newCar.querySelector('.car-color').innerHTML = color
+            newCar.querySelector('.car-motor').innerHTML = motor
             newCar.querySelector('.f_edit-item').dataset.itemId = id
             newCar.querySelector('.f_delete-item').dataset.itemId = id
             newCar.style.display = 'block'
@@ -107,9 +107,9 @@ function saveCar() {
         getData(requestUrl).then(id => {
             const newCar = wrapper.querySelectorAll('.card')[0].cloneNode(true);
             newCar.querySelector('.car-brand').innerHTML = brand
-            newCar.querySelector('.car-year').innerHTML = 'year - ' + year
-            newCar.querySelector('.car-color').innerHTML = 'color - ' + color
-            newCar.querySelector('.car-motor').innerHTML = 'motor - ' + motor
+            newCar.querySelector('.car-year').innerHTML = year
+            newCar.querySelector('.car-color').innerHTML = color
+            newCar.querySelector('.car-motor').innerHTML = motor
             newCar.querySelector('.f_edit-item').dataset.itemId = id
             newCar.querySelector('.f_delete-item').dataset.itemId = id
             newCar.style.display = 'block'
@@ -138,10 +138,10 @@ function editCar(id) {
     const data = getData(requestUrl);
     data.then(car => {
 
-        setEditCar('#select-brand', car['brand'])
-        setEditCar('#select-year', car['year'])
-        setEditCar('#select-color', car['color'])
-        setEditCar('#select-motor', car['motor'])
+        setValueById('#select-brand', car['brand'])
+        setValueById('#select-year', car['year'])
+        setValueById('#select-color', car['color'])
+        setValueById('#select-motor', car['motor'])
         wrapper.querySelector('#select-id').value = car['id']
     })
 
@@ -165,9 +165,9 @@ function updateCar() {
             wrapper.querySelectorAll('.card').forEach(car => {
                 if (car.querySelector('.f_edit-item').dataset.itemId === id) {
                     car.querySelector('.car-brand').innerHTML = brand
-                    car.querySelector('.car-year').innerHTML = 'year - ' + year
-                    car.querySelector('.car-color').innerHTML = 'color - ' + color
-                    car.querySelector('.car-motor').innerHTML = 'motor - ' + motor
+                    car.querySelector('.car-year').innerHTML = year
+                    car.querySelector('.car-color').innerHTML = color
+                    car.querySelector('.car-motor').innerHTML = motor
                 }
             })
         })
@@ -191,7 +191,7 @@ function deleteCar(id) {
     })
 }
 
-function setEditCar(elementId, value) {
+function setValueById(elementId, value) {
     wrapper.querySelector(elementId).querySelectorAll('option').forEach(el => {
         if ('' + el.value === value + '') {
             el.selected = true
@@ -199,17 +199,11 @@ function setEditCar(elementId, value) {
     })
 }
 
-
 function getData(url) {
     return fetch(url).then(res => res.json())
 }
 
-function setOptionsInModal() {
-    setOption('#select-brand', 'brand')
-    setOption('#select-color', 'color')
-}
-
-function setOption(elementId, dataType, searchText = '') {
+function setOptions(elementId, dataType, searchText = '') {
     const requestUrl = `${ACTIONS_DIR}/searchAction.php?search=${searchText}&dataType=${dataType}`
     const data = getData(requestUrl);
 
@@ -223,7 +217,6 @@ function setOption(elementId, dataType, searchText = '') {
     })
 }
 
-
 function openModal() {
     wrapper.querySelector('.form-container').classList.add('active')
 }
@@ -231,10 +224,10 @@ function openModal() {
 function closeModal() {
     wrapper.querySelector('.form-container').classList.remove('active')
 
-    setEditCar('#select-brand', '')
-    setEditCar('#select-year', '')
-    setEditCar('#select-color', '')
-    setEditCar('#select-motor', '')
+    setValueById('#select-brand', '')
+    setValueById('#select-year', '')
+    setValueById('#select-color', '')
+    setValueById('#select-motor', '')
 
     wrapper.querySelector('#select-brand').style.outline = 'none'
     wrapper.querySelector('#select-year').style.outline = 'none'

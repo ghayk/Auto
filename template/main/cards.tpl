@@ -6,11 +6,20 @@
         <div class="card-img-container">
             <img src="/img/img.png" alt="car">
         </div>
-        <div class="card-description">
-            <p class="car-year"></p>
-            <p class="car-color"></p>
-            <p class="car-motor"></p>
-        </div>
+        <table class="card-description">
+            <tr>
+                <td>year</td>
+                <td class="car-year"></td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td class="car-color"></td>
+            </tr>
+            <tr>
+                <td>motor</td>
+                <td class="car-motor"></td>
+            </tr>
+        </table>
         <div class="card-form-container">
             <input class="edit-form  f_edit-item" type="submit" name="edit" data-item-id="" value="edit">
             <input class="delete-form  f_delete-item" type="submit" name="delete" data-item-id="" value="delete">

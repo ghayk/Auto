@@ -21,7 +21,7 @@
             <label>
                 <select name="db" class="dataType">
                     <option value="mysql">MySql</option>
-                    <option selected value="file">File</option>
+                    <option value="file">File</option>
                 </select>
             </label>
         </div>
