@@ -2,13 +2,14 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Manager\CarManager;
+use App\Manager\CarFileManager;
+use App\Manager\CarMySqlManager;
 
 if ($_GET['delete']) {
     if ($_GET['dataType'] === 'mysql') {
-        CarManager::getInstance()->deleteCarFomMySql((int)$_GET['delete']);
+        CarMySqlManager::getInstance()->deleteCar((int)$_GET['delete']);
     } elseif ($_GET['dataType'] === 'file') {
-        CarManager::getInstance()->deleteCarFomFile($_GET['delete']);
+        CarFileManager::getInstance()->deleteCar($_GET['delete']);
     }
 
     echo json_encode($_GET['delete']);

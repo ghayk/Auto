@@ -4,13 +4,16 @@ namespace App\Mapper;
 
 use App\Model\CarModel;
 
-class CarMySqlMapper extends MySqlMapper
+class CarMySqlMapper extends AbstractMySqlMapper
 {
 
     /**
      * @var CarMySqlMapper|null
      */
     private static ?CarMySqlMapper $instance = null;
+
+    protected string $tableName = 'auto';
+
 
     /**
      * @return CarMySqlMapper|null
@@ -24,13 +27,6 @@ class CarMySqlMapper extends MySqlMapper
         return self::$instance;
     }
 
-    /**
-     *
-     */
-    public function __construct()
-    {
-        $this->tableName = 'auto';
-    }
 
     /**
      * @param int $id

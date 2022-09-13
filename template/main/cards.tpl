@@ -1,8 +1,10 @@
 <div class="cards-container">
     <div class="card" style="display: none">
-        <div class="card-img-container"></div>
         <div class="card-title">
             <h5 class="car-brand"></h5>
+        </div>
+        <div class="card-img-container">
+            <img src="/img/img.png" alt="car">
         </div>
         <div class="card-description">
             <p class="car-year"></p>

@@ -1,3 +1,3 @@
 <header class="header">
-    <h1>auto cards</h1>
+    <h1>auto</h1>
 </header>

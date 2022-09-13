@@ -2,7 +2,7 @@
 
 namespace App\Manager;
 
-use App\Mapper\ColorMySqlMapper;
+use App\mapper\ColorMySqlMapper;
 
 class ColorManager
 {
@@ -27,7 +27,7 @@ class ColorManager
     /**
      * @return array
      */
-    public function getColorsFromMySql($searchText): array
+    public function getColors($searchText): array
     {
         return ColorMySqlMapper::getInstance()->getColors($searchText);
     }

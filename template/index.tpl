@@ -12,15 +12,19 @@
 </head>
 
 <body>
+{include './header/header.tpl'}
 <div class="wrapper">
-    {include './header/header.tpl'}
     <main class="main">
-        <button class="add-btn add-car">add new car</button>
-        <label><input type="text" name="search" class="search-car" placeholder="search"></label>
-        <select name="db" class="dataType">
-            <option value="mysql">MySql</option>
-            <option selected value="file">File</option>
-        </select>
+        <div class="nav">
+            <button class="add-btn add-car">add new car</button>
+            <label><input type="text" name="search" class="search-car" placeholder="search"></label>
+            <label>
+                <select name="db" class="dataType">
+                    <option value="mysql">MySql</option>
+                    <option selected value="file">File</option>
+                </select>
+            </label>
+        </div>
 
         {include './main/addOrEditForm.tpl'}
         {include './main/cards.tpl'}

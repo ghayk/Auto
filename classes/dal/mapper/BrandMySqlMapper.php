@@ -3,13 +3,16 @@
 namespace App\Mapper;
 
 
-class BrandMySqlMapper extends MySqlMapper
+class BrandMySqlMapper extends AbstractMySqlMapper
 {
 
     /**
      * @var BrandMySqlMapper|null
      */
     private static ?BrandMySqlMapper $instance = null;
+
+    protected string $tableName = 'brand';
+
 
     /**
      * @return BrandMySqlMapper|null
@@ -23,13 +26,6 @@ class BrandMySqlMapper extends MySqlMapper
         return self::$instance;
     }
 
-    /**
-     *
-     */
-    public function __construct()
-    {
-        $this->tableName = 'brand';
-    }
 
     /**
      * @param $searchText

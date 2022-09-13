@@ -4,13 +4,16 @@ namespace App\Mapper;
 
 use App\Model\UserModel;
 
-class UserMySqlMapper extends MySqlMapper
+class UserMySqlMapper extends AbstractMySqlMapper
 {
 
     /**
      * @var UserMySqlMapper|null
      */
     private static ?UserMySqlMapper $instance = null;
+
+    protected string $tableName = 'user';
+
 
     /**
      * @return UserMySqlMapper|null
@@ -22,14 +25,6 @@ class UserMySqlMapper extends MySqlMapper
         }
 
         return self::$instance;
-    }
-
-    /**
-     *
-     */
-    public function __construct()
-    {
-        $this->tableName = 'user';
     }
 
     /**

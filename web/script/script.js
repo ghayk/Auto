@@ -205,40 +205,24 @@ function getData(url) {
 }
 
 function setOptionsInModal() {
-    setBrands()
-    setColors()
+    setOption('#select-brand', 'brand')
+    setOption('#select-color', 'color')
 }
 
-function setBrands(searchText = '') {
-
-    const requestUrl = `${ACTIONS_DIR}/searchAction.php?search=${searchText}&dataType=brand`
+function setOption(elementId, dataType, searchText = '') {
+    const requestUrl = `${ACTIONS_DIR}/searchAction.php?search=${searchText}&dataType=${dataType}`
     const data = getData(requestUrl);
 
     data.then(brands => {
         brands.forEach(brand => {
             const brandName = brand['title']
             const el = `<option value="${brandName}">${brandName}</option>`
-            wrapper.querySelector('#select-brand').innerHTML += el;
+            wrapper.querySelector(elementId).innerHTML += el;
         })
 
     })
 }
 
-function setColors(searchText = '') {
-
-    const requestUrl = `${ACTIONS_DIR}/searchAction.php?search=${searchText}&dataType=color`
-    const data = getData(requestUrl);
-
-    data.then(colors => {
-
-        colors.forEach(color => {
-            const colorName = color['title']
-            const el = `<option value="${colorName}">${colorName}</option>`
-            wrapper.querySelector('#select-color').innerHTML += el;
-        })
-
-    })
-}
 
 function openModal() {
     wrapper.querySelector('.form-container').classList.add('active')

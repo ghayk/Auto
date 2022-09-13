@@ -2,14 +2,15 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Manager\CarManager;
+use App\Manager\CarFileManager;
+use App\Manager\CarMySqlManager;
 
 if ($_GET['edit']) {
     $car = [];
     if ($_GET['dataType'] === 'mysql') {
-        $car = CarManager::getInstance()->getEditCarFromMySql((int)$_GET['edit']);
+        $car = CarMySqlManager::getInstance()->getEditCar((int)$_GET['edit']);
     } elseif ($_GET['dataType'] === 'file') {
-        $car = CarManager::getInstance()->getEditCarFromFile($_GET['edit']);
+        $car = CarFileManager::getInstance()->getEditCar($_GET['edit']);
     }
     echo json_encode($car);
 }

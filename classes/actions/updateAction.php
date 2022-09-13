@@ -2,7 +2,8 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Manager\CarManager;
+use App\Manager\CarFileManager;
+use App\Manager\CarMySqlManager;
 use App\Model\CarModel;
 
 if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor'] && $_GET['id']) {
@@ -14,9 +15,9 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor'] && $_GET
     $car->setId($_GET['id']);
 
     if ($_GET['dataType'] === 'mysql') {
-        CarManager::getInstance()->updateCarFromMySql($car);
+        CarMySqlManager::getInstance()->updateCar($car);
     } elseif ($_GET['dataType'] === 'file') {
-        CarManager::getInstance()->updateCarFromFile($car);
+        CarFileManager::getInstance()->updateCar($car);
     }
 
     echo json_encode($_GET['id']);

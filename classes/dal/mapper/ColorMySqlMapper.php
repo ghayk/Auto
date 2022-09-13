@@ -3,13 +3,15 @@
 namespace App\Mapper;
 
 
-class ColorMySqlMapper extends MySqlMapper
+class ColorMySqlMapper extends AbstractMySqlMapper
 {
 
     /**
      * @var ColorMySqlMapper|null
      */
     private static ?ColorMySqlMapper $instance = null;
+
+    protected string $tableName = 'color';
 
     /**
      * @return ColorMySqlMapper|null
@@ -23,13 +25,6 @@ class ColorMySqlMapper extends MySqlMapper
         return self::$instance;
     }
 
-    /**
-     *
-     */
-    public function __construct()
-    {
-        $this->tableName = 'color';
-    }
 
     /**
      * @param $searchText

@@ -2,7 +2,7 @@
 
 namespace App\Manager;
 
-use App\Mapper\BrandMySqlMapper;
+use App\mapper\BrandMySqlMapper;
 
 class BrandManager
 {
@@ -27,7 +27,7 @@ class BrandManager
     /**
      * @return array
      */
-    public function getBrandsFromMySql($searchText): array
+    public function getBrands($searchText): array
     {
         return BrandMySqlMapper::getInstance()->getBrands($searchText);
     }
