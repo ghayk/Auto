@@ -88,6 +88,7 @@ export default class CarManager {
             } else {
               id = null;
             }
+
             this.editCar(id);
           });
 
@@ -101,6 +102,7 @@ export default class CarManager {
             } else {
               id = null;
             }
+
             this.deleteCar(id);
           });
 
@@ -144,6 +146,7 @@ export default class CarManager {
             } else {
               id = null;
             }
+
             this.editCar(id);
           });
 
