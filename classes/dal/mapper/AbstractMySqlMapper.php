@@ -77,8 +77,8 @@ abstract class AbstractMySqlMapper
     public function updateElement(array $arr, int $id): void
     {
         $sql = implode(', ', array_map(
-                function ($k, $v) {
-                    return $k . " = '" . $v . "'";
+                function ($key, $value) {
+                    return $key . " = '" . $value . "'";
                 },
                 array_keys($arr),
                 array_values($arr)

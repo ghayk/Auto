@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-09-10 09:19:56
+/* Smarty version 4.2.0, created on 2022-09-13 17:26:42
   from 'C:\OpenServer\domains\auto\template\main\addOrEditForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_631c2c8ce75bf2_46903411',
+  'unifunc' => 'content_632093222dce34_25821742',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e640e9255286d88da65b3d875000e503308dcddd' => 
     array (
       0 => 'C:\\OpenServer\\domains\\auto\\template\\main\\addOrEditForm.tpl',
-      1 => 1662790796,
+      1 => 1663079200,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_631c2c8ce75bf2_46903411 (Smarty_Internal_Template $_smarty_tpl) {
+function content_632093222dce34_25821742 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="form-container">
     <form action="#" method="POST" class="form-car">
         <h3 class="form-title">Add new car</h3>
@@ -69,7 +69,6 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </select>
         </label>
-        <p class="error-massage" style="color: red;margin-left: 15px"></p>
         <label>
             <input type="hidden" name="id" value='' id="select-id">
         </label>

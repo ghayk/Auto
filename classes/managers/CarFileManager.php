@@ -24,8 +24,8 @@ class CarFileManager
         return self::$instance;
     }
 
-
     /**
+     * @param $searchText
      * @return array
      */
     public function getCars($searchText): array

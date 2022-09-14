@@ -28,7 +28,6 @@
                 {/foreach}
             </select>
         </label>
-        <p class="error-massage" style="color: red;margin-left: 15px"></p>
         <label>
             <input type="hidden" name="id" value='' id="select-id">
         </label>

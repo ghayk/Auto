@@ -1,5 +1,5 @@
 <div class="cards-container">
-    <div class="card" style="display: none">
+    <div class="card f_card" style="display: none">
         <div class="card-title">
             <h5 class="car-brand"></h5>
         </div>
@@ -21,8 +21,8 @@
             </tr>
         </table>
         <div class="card-form-container">
-            <input class="edit-form  f_edit-item" type="submit" name="edit" data-item-id="" value="edit">
-            <input class="delete-form  f_delete-item" type="submit" name="delete" data-item-id="" value="delete">
+            <input class="edit-form  f_edit-item" type="submit" name="edit" value="edit">
+            <input class="delete-form  f_delete-item" type="submit" name="delete" value="delete">
         </div>
     </div>
 </div>
