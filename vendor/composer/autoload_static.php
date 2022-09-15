@@ -17,7 +17,6 @@ class ComposerStaticInit02af93af4abea4790f0c5dead45d2669
         ),
         'A' => 
         array (
-            'App\\Manager\\' => 12,
             'App\\' => 4,
         ),
     );
@@ -31,13 +30,9 @@ class ComposerStaticInit02af93af4abea4790f0c5dead45d2669
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'App\\Manager\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/classes/managers',
-        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/classes/dal',
+            0 => __DIR__ . '/../..' . '/classes',
         ),
     );
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-09-13 18:38:25
+/* Smarty version 4.2.1, created on 2022-09-15 18:37:58
   from 'C:\OpenServer\domains\auto\template\main\cards.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.2.0',
-  'unifunc' => 'content_6320a3f16f3fc8_40500448',
+  'version' => '4.2.1',
+  'unifunc' => 'content_632346d601c1c3_00656177',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6320a3f16f3fc8_40500448 (Smarty_Internal_Template $_smarty_tpl) {
+function content_632346d601c1c3_00656177 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="cards-container">
     <div class="card f_card" style="display: none">
         <div class="card-title">

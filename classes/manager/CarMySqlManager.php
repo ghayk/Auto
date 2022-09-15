@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Manager;
+namespace App\manager;
 
-use App\mapper\CarMySqlMapper;
-use App\Model\CarModel;
+
+use App\dal\mapper\CarMySqlMapper;
+use App\dal\model\CarModel;
 
 class CarMySqlManager
 {
@@ -14,9 +15,9 @@ class CarMySqlManager
     private static ?CarMySqlManager $instance = null;
 
     /**
-     * @return CarMySqlManager|null
+     * @return CarMySqlManager
      */
-    public static function getInstance(): ?CarMySqlManager
+    public static function getInstance(): CarMySqlManager
     {
         if (self::$instance === null) {
             self::$instance = new CarMySqlManager();

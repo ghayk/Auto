@@ -2,8 +2,8 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Manager\CarFileManager;
-use App\Manager\CarMySqlManager;
+use App\manager\CarFileManager;
+use App\manager\CarMySqlManager;
 
 if ($_GET['edit']) {
     $car = [];

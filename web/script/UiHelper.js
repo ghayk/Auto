@@ -1,6 +1,12 @@
-import DataManager from "./DataManager.js";
+export default class UiHelper {
 
-export default class DomManager {
+    setValues(params) {
+        this.setValueById('#select-brand', params['brand'])
+        this.setValueById('#select-year', params['year'])
+        this.setValueById('#select-color', params['color'])
+        this.setValueById('#select-motor', params['motor'])
+        document.querySelector('#select-id').value = params['id']
+    }
 
     setValueById(elementId, value) {
         document.querySelector(elementId).querySelectorAll('option').forEach(el => {
@@ -10,38 +16,34 @@ export default class DomManager {
         })
     }
 
-    setOptions(elementId, dataType, searchText = '') {
-        const requestUrl = `classes/actions/searchAction.php?search=${searchText}&dataType=${dataType}`
-        const data = new DataManager().getData(requestUrl);
+    openModal(type) {
+        if (type === 'add') {
+            document.querySelector(".form-title").innerHTML = "Add new car";
+            document.querySelector(".save-btn").value = "add";
+        } else if (type === 'update') {
+            document.querySelector(".form-title").innerHTML = "Update new car";
+            document.querySelector(".save-btn").value = "update";
+        }
 
-        data.then(brands => {
-            brands.forEach(brand => {
-                const brandName = brand['title']
-                const el = `<option value="${brandName}">${brandName}</option>`
-                document.querySelector(elementId).innerHTML += el;
-            })
-
-        })
-    }
-
-    openModal() {
         document.querySelector('.form-container').classList.add('active')
     }
 
     closeModal() {
         document.querySelector('.form-container').classList.remove('active')
 
+        this.setValues({
+            'brand': '',
+            'year': '',
+            'color': '',
+            'motor': ''
+        })
 
-        this.setValueById('#select-brand', '')
-        this.setValueById('#select-year', '')
-        this.setValueById('#select-color', '')
-        this.setValueById('#select-motor', '')
+        document.querySelector('#select-id').value = ''
 
         document.querySelector('#select-brand').style.outline = 'none'
         document.querySelector('#select-year').style.outline = 'none'
         document.querySelector('#select-color').style.outline = 'none'
         document.querySelector('#select-motor').style.outline = 'none'
-
     }
 
     setError() {

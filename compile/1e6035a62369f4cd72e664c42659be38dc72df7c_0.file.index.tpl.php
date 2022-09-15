@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-09-14 09:43:01
+/* Smarty version 4.2.1, created on 2022-09-15 18:37:57
   from 'C:\OpenServer\domains\auto\template\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.2.0',
-  'unifunc' => 'content_632177f58d0c10_26025148',
+  'version' => '4.2.1',
+  'unifunc' => 'content_632346d5d311f4_06614190',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e6035a62369f4cd72e664c42659be38dc72df7c' => 
     array (
       0 => 'C:\\OpenServer\\domains\\auto\\template\\index.tpl',
-      1 => 1663136945,
+      1 => 1663249598,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./main/cards.tpl' => 1,
   ),
 ),false)) {
-function content_632177f58d0c10_26025148 (Smarty_Internal_Template $_smarty_tpl) {
+function content_632346d5d311f4_06614190 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 
@@ -60,7 +60,7 @@ function content_632177f58d0c10_26025148 (Smarty_Internal_Template $_smarty_tpl)
     </main>
 </div>
 <?php echo '<script'; ?>
- type="module" src="./web/script/script.js"><?php echo '</script'; ?>
+ type="module" src="./web/script/drawCars.js"><?php echo '</script'; ?>
 >
 </body>
 </html>

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Mapper;
+namespace App\dal\mapper;
 
-use App\Model\UserModel;
+
+use App\dal\model\UserModel;
 
 class UserMySqlMapper extends AbstractMySqlMapper
 {

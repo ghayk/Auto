@@ -2,9 +2,9 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use App\Manager\CarFileManager;
-use App\Manager\CarMySqlManager;
-use App\Model\CarModel;
+use App\dal\model\CarModel;
+use App\manager\CarFileManager;
+use App\manager\CarMySqlManager;
 
 if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor']) {
     $car = new CarModel();

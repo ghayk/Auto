@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Manager;
+namespace App\manager;
 
-use App\mapper\ColorMySqlMapper;
+use App\dal\mapper\ColorMySqlMapper;
 
 class ColorManager
 {

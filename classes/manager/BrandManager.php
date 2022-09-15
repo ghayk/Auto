@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Manager;
+namespace App\manager;
 
-use App\mapper\BrandMySqlMapper;
+
+use App\dal\mapper\BrandMySqlMapper;
 
 class BrandManager
 {

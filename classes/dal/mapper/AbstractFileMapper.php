@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mapper;
+namespace App\dal\mapper;
 
 
 abstract class AbstractFileMapper
@@ -24,7 +24,6 @@ abstract class AbstractFileMapper
 
     /**
      * @param array $arr
-     * @param int $id
      * @return void
      */
     public function updateElement(array $arr): void

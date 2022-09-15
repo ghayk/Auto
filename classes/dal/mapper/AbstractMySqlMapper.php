@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Mapper;
+namespace App\dal\mapper;
 
 use PDO;
 
-define("App\Mapper\DB", json_decode(file_get_contents(__DIR__ . '/../../../config/db.json'), true));
+define("App\dal\mapper\DB", json_decode(file_get_contents(__DIR__ . '/../../../config/db.json'), true));
 
 
 abstract class AbstractMySqlMapper
@@ -17,9 +17,9 @@ abstract class AbstractMySqlMapper
 
     private static string $ADD_ELEMENT = "INSERT INTO %s (%s) VALUES (%s)";
     private static string $GET_LIST = "SELECT * FROM %s WHERE %s LIKE %s";
-    private static string $UPDATE_ELEMENT = "UPDATE %s  SET %s WHERE id = %s";
     private static string $DELETE_ELEMENT = "DELETE FROM %s WHERE id = %s";
     private static string $GET_ELEMENT = "SELECT * FROM %s WHERE id = %s";
+    private static string $UPDATE_ELEMENT = 'UPDATE %s SET %s WHERE id = %s';
 
 
     /**
@@ -40,13 +40,8 @@ abstract class AbstractMySqlMapper
         $str = "'%$searchText%'";
         $query = sprintf(self::$GET_LIST, $this->tableName, $fieldName, $str);
 
-        $pdo = $this->connect();
-        $sth = $pdo->prepare($query);
-        $sth->execute();
-
-        return $sth->fetchAll();
+        return $this->addRow($query)->fetchAll();
     }
-
 
     /**
      * @param array $arr
@@ -61,12 +56,7 @@ abstract class AbstractMySqlMapper
         $pdo = $this->connect();
         $sth = $pdo->prepare($query);
         $sth->execute();
-        $id = $pdo->lastInsertId();
-
-        $pdo = null;
-        $sth = null;
-
-        return $id;
+        return $pdo->lastInsertId();
     }
 
     /**
@@ -102,12 +92,7 @@ abstract class AbstractMySqlMapper
     {
         $query = sprintf(self::$DELETE_ELEMENT, $this->tableName, $id);
 
-        $pdo = $this->connect();
-        $sth = $pdo->prepare($query);
-        $sth->execute();
-
-        $pdo = null;
-        $sth = null;
+        $this->addRow($query);
     }
 
     /**
@@ -118,11 +103,15 @@ abstract class AbstractMySqlMapper
     {
         $query = sprintf(self::$GET_ELEMENT, $this->tableName, $id);
 
+        return $this->addRow($query)->fetchAll()[0];
+    }
+
+    private function addRow($query)
+    {
         $pdo = $this->connect();
         $sth = $pdo->prepare($query);
-
         $sth->execute();
 
-        return $sth->fetchAll()[0];
+        return $sth;
     }
 }

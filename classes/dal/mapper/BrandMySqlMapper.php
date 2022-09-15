@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Mapper;
-
+namespace App\dal\mapper;
 
 class BrandMySqlMapper extends AbstractMySqlMapper
 {

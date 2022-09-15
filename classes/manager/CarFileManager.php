@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Manager;
+namespace App\manager;
 
-use App\mapper\CarFileMapper;
-use App\Model\CarModel;
+use App\dal\mapper\CarFileMapper;
+use App\dal\model\CarModel;
 
 class CarFileManager
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Mapper;
+namespace App\dal\mapper;
 
-use App\Model\CarModel;
+use App\dal\model\CarModel;
 
 class CarMySqlMapper extends AbstractMySqlMapper
 {

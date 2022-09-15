@@ -30,7 +30,7 @@
         {include './main/cards.tpl'}
     </main>
 </div>
-<script type="module" src="./web/script/script.js"></script>
+<script type="module" src="./web/script/drawCars.js"></script>
 </body>
 </html>
 
