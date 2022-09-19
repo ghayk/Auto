@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #eee;
 }
 
@@ -30,7 +30,7 @@ body{
     margin: 0 auto;
 }
 
-.wrapper .main .nav{
+.wrapper .main .nav {
     margin-bottom: 20px;
 }
 
@@ -117,27 +117,29 @@ body{
     border: none;
 }
 
-.wrapper .main .form-container .form-car input[value='add'] {
+.wrapper .main .form-container .form-car .save-btn {
     background: #2fa0f1;
+    display: none;
 }
 
-.wrapper .main .form-container .form-car input[value='add']:active {
+.wrapper .main .form-container .form-car .save-btn:active {
     background: #1492f3;
 }
 
-.wrapper .main .form-container .form-car input[value='update'] {
+.wrapper .main .form-container .form-car .update-btn {
     background: #ffbb1c;
+    display: none;
 }
 
-.wrapper .main .form-container .form-car input[value='update']:active {
+.wrapper .main .form-container .form-car .update-btn:active {
     background: #e8a000;
 }
 
-.wrapper .main .form-container .form-car input[value='cancel'] {
+.wrapper .main .form-container .form-car .cancel-btn {
     background: #ff0000;
 }
 
-.wrapper .main .form-container .form-car input[value='cancel']:active {
+.wrapper .main .form-container .form-car .cancel-btn:active {
     background: #b60000;
 }
 
@@ -178,11 +180,11 @@ body{
     margin-bottom: 10px;
 }
 
-.wrapper .main .cards-container .card .card-description{
+.wrapper .main .cards-container .card .card-description {
     margin-bottom: 10px;
 }
 
-.wrapper .main .cards-container .card .card-description tr td{
+.wrapper .main .cards-container .card .card-description tr td {
     min-width: 60px;
 }
 

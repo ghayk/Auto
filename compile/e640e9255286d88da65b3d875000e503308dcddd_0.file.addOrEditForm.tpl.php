@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-09-15 18:37:57
+/* Smarty version 4.2.1, created on 2022-09-18 18:40:57
   from 'C:\OpenServer\domains\auto\template\main\addOrEditForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_632346d5e55c35_92544142',
+  'unifunc' => 'content_63273c09b45f71_31178241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e640e9255286d88da65b3d875000e503308dcddd' => 
     array (
       0 => 'C:\\OpenServer\\domains\\auto\\template\\main\\addOrEditForm.tpl',
-      1 => 1663251680,
+      1 => 1663515651,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_632346d5e55c35_92544142 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63273c09b45f71_31178241 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="form-container">
     <form action="#" method="POST" class="form-car">
         <h3 class="form-title">Add new car</h3>
@@ -73,7 +73,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <input type="hidden" name="id" value='' id="select-id">
         </label>
         <div class="btn-container">
-            <input type="submit" value="add" name="action" class="save-btn">
+            <input type="submit" value="save" name="action" class="save-btn">
+            <input type="submit" value="update" name="action" class="update-btn">
             <input type="submit" value="cancel" name="action" class="cancel-btn">
         </div>
     </form>

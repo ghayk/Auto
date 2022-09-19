@@ -32,7 +32,8 @@
             <input type="hidden" name="id" value='' id="select-id">
         </label>
         <div class="btn-container">
-            <input type="submit" value="add" name="action" class="save-btn">
+            <input type="submit" value="save" name="action" class="save-btn">
+            <input type="submit" value="update" name="action" class="update-btn">
             <input type="submit" value="cancel" name="action" class="cancel-btn">
         </div>
     </form>
