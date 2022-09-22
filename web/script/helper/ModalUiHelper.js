@@ -20,7 +20,6 @@ export default class ModalUiHelper {
         modal.querySelector(".update-btn").style.display = "none";
         modal.querySelector(".save-btn").style.display = "none";
 
-
         modal.querySelector('#select-brand').value = ''
         modal.querySelector('#select-year').value = ''
         modal.querySelector('#select-color').value = ''
@@ -64,7 +63,7 @@ export default class ModalUiHelper {
         }
     }
 
-    setOptions(selectId, params){
+    setOptions(selectId, params) {
         params.forEach(item => {
             const title = item['title']
             const el = `<option value="${title}">${title}</option>`

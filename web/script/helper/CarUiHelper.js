@@ -6,7 +6,6 @@ export default class CarUiHelper {
         this.modalUiHelper = new ModalUiHelper()
     }
 
-
     drawCars(cars, editCar, deleteCar) {
         document.querySelectorAll(".card").forEach((car) => {
             if (car.style.display !== "none") {
@@ -35,14 +34,13 @@ export default class CarUiHelper {
         });
     }
 
-
     fillCarData(params, editCar, deleteCar) {
         const car = document.querySelector(".f_card").cloneNode(true);
 
         car.dataset.id = params['id'];
-        this.updateCarUIData(car, params);
-
         car.style.display = "block";
+
+        this.updateCarUIData(car, params);
 
         car.querySelector(".f_edit-item").addEventListener("click", (event) => {
             if (!event.currentTarget.closest(".f_card")) {
@@ -50,13 +48,13 @@ export default class CarUiHelper {
             }
 
             const id = event.currentTarget.closest(".f_card").dataset.id
-
             if (!id) {
                 return
             }
 
-            this.modalUiHelper.open('update');
             editCar(id);
+
+            this.modalUiHelper.open('update');
         });
 
         car.querySelector(".f_delete-item").addEventListener("click", (event) => {

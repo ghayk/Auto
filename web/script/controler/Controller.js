@@ -63,18 +63,6 @@ export default class Controller {
         })
     }
 
-    deleteCar(id) {
-        this.carManager.deleteCar(id);
-        this.carUiHelper.deleteCar(id);
-        this.modalUiHelper.close();
-    }
-
-    editCar(id) {
-        this.carManager.getEditCar(id).then(car => {
-            this.carUiHelper.setCarEditData(car)
-        })
-    }
-
     addCar() {
         this.modalUiHelper.open('add');
     }
@@ -109,6 +97,18 @@ export default class Controller {
         this.carManager.updateCar(data).then(id => id)
         this.carUiHelper.updateCar(data)
         this.modalUiHelper.close()
+    }
+
+    editCar(id) {
+        this.carManager.getEditCar(id).then(car => {
+            this.carUiHelper.setCarEditData(car)
+        })
+    }
+
+    deleteCar(id) {
+        this.carManager.deleteCar(id);
+        this.carUiHelper.deleteCar(id);
+        this.modalUiHelper.close();
     }
 
     setModalOptions() {
