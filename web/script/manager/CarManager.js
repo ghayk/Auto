@@ -6,7 +6,7 @@ export default class CarManager {
         const dataType = document.querySelector(".dataType").value;
 
         return ApiHelper.getData('getCarsAction', {
-            'search': searchText,
+            'searchText': searchText,
             'dataType': dataType
         });
     }
@@ -19,7 +19,7 @@ export default class CarManager {
         const dataType = document.querySelector(".dataType").value;
 
         return ApiHelper.getData('editAction', {
-            'edit': id,
+            'id': id,
             'dataType': dataType
         });
     }
@@ -28,7 +28,7 @@ export default class CarManager {
         const dataType = document.querySelector(".dataType").value;
 
         ApiHelper.getData('deleteAction', {
-            'delete': id,
+            'id': id,
             'dataType': dataType
         }).then(id => id);
     }
@@ -39,7 +39,7 @@ export default class CarManager {
 
     getModalOptions(dataType, actionName, searchText = '') {
         return ApiHelper.getData(actionName, {
-            'search': searchText,
+            'searchText': searchText,
             'dataType': dataType
         });
     }

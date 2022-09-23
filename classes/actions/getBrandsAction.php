@@ -6,7 +6,7 @@ use App\manager\BrandManager;
 
 
 if ($_GET['dataType'] === 'mysql') {
-    $brands = BrandManager::getInstance()->getBrands($_GET['search']);
+    $brands = BrandManager::getInstance()->getBrands($_GET['searchText']);
 } else {
     $brands = [];
 }

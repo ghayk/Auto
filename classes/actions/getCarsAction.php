@@ -6,9 +6,9 @@ use App\manager\CarMySqlManager;
 use App\manager\CarFileManager;
 
 if ($_GET['dataType'] === 'mysql') {
-    $cars = CarMySqlManager::getInstance()->getCars($_GET['search']);
+    $cars = CarMySqlManager::getInstance()->getCars($_GET['searchText']);
 } elseif($_GET['dataType'] === 'file'){
-    $cars = CarFileManager::getInstance()->getCars($_GET['search']);
+    $cars = CarFileManager::getInstance()->getCars($_GET['searchText']);
 }else{
     $cars =[];
 }

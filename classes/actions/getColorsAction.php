@@ -6,7 +6,7 @@ use App\manager\ColorManager;
 
 
 if ($_GET['dataType'] === 'mysql') {
-    $colors = ColorManager::getInstance()->getColors($_GET['search']);
+    $colors = ColorManager::getInstance()->getColors($_GET['searchText']);
 } else {
     $colors = [];
 }
