@@ -123,6 +123,4 @@ abstract class AbstractFileMapper
     {
         file_put_contents(self::FILE_DIR, json_encode($cars));
     }
-
-
 }

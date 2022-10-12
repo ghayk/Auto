@@ -76,12 +76,7 @@ abstract class AbstractMySqlMapper
         );
         $query = sprintf(self::$UPDATE_ELEMENT, $this->tableName, $sql, $id);
 
-        $pdo = $this->connect();
-        $sth = $pdo->prepare($query);
-        $sth->execute();
-
-        $pdo = null;
-        $sth = null;
+        $this->addRow($query);
     }
 
     /**
@@ -106,6 +101,10 @@ abstract class AbstractMySqlMapper
         return $this->addRow($query)->fetchAll()[0];
     }
 
+    /**
+     * @param $query
+     * @return false|\PDOStatement
+     */
     private function addRow($query)
     {
         $pdo = $this->connect();

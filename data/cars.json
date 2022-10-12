@@ -1,16 +1,1 @@
-[
-  {
-    "id": "6328933c6f8fd",
-    "brand": "Aston Martin",
-    "year": 1999,
-    "color": "Indigo",
-    "motor": 2
-  },
-  {
-    "id": "6328934a40df0",
-    "brand": "Audi",
-    "year": 2000,
-    "color": "Khaki",
-    "motor": 2.5
-  }
-]
+[{"id":"6328934a40df0","brand":"Audi","year":2000,"color":"Khaki","motor":2.5},{"id":"633af67f424c0","brand":"Bentley","year":2001,"color":"Khaki","motor":2.4},{"id":"633af688673bf","brand":"Aston Martin","year":2003,"color":"Lime","motor":2.5}]

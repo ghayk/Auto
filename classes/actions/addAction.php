@@ -14,6 +14,7 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor']) {
     $car->setMotor($_GET['motor']);
 
     $id = null;
+
     if ($_GET['dataType'] === 'mysql') {
         $id = CarMySqlManager::getInstance()->addCar($car);
     } elseif ($_GET['dataType'] === 'file') {
