@@ -22,5 +22,4 @@ if ($_GET['brand'] && $_GET['year'] && $_GET['color'] && $_GET['motor']) {
     }
 
     echo json_encode($id);
-
 }
